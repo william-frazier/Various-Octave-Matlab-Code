@@ -3,4 +3,4 @@ function p = predict(h)
 
   [_, p] = max(h, [], 2);
 
-end
+  end

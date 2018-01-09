@@ -8,10 +8,14 @@ function h = forward (Theta1, Theta2, X)
   % output h has size m x s3
 
   m = size(X, 1);
-
-  % as in lab 10, but more compact (and we're transposing the Thetas!)
-
-  a = sigmoid([ones(m, 1) X] * Theta1');
-  h = sigmoid([ones(m, 1) a] * Theta2');
+  a1 = addones(X);
+  z2 = Theta1 * a1';
+  a2 = sigmoid(z2');
+  a2 = addones(a2);
+  z3 = Theta2 * a2';
+  
+  
+  % placeholder
+  h = sigmoid(z3');
 
 end
